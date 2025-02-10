@@ -14,7 +14,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '17'
-        distribution: 'adopt' # Specify the distribution
+        distribution: 'adopt'
 
     - name: Compile project
       run: ./gradlew build
@@ -22,7 +22,7 @@ jobs:
     - name: Run unit tests
       run: ./gradlew test
 
-  sonarqube:
+  launch:
     runs-on: ubuntu-latest
     needs: build
 
@@ -34,7 +34,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '17'
-        distribution: 'adopt' # Specify the distribution
+        distribution: 'adopt'
 
     - name: SonarQube Scan
       env:
