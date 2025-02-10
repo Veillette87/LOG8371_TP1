@@ -14,6 +14,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
+        distribution: 'adopt' # Specify the distribution
 
     - name: Compile project
       run: ./gradlew build
@@ -33,8 +34,9 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
+        distribution: 'adopt' # Specify the distribution
 
     - name: SonarQube Scan
       env:
-        SONAR_TOKEN: ${{ secrets.TP1_TOKEN }}
-      run: ./gradlew sonarqube -Dsonar.projectKey=Veillette87_LOG8371_TP1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.TP1_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: ./gradlew sonarqube -Dsonar.projectKey=Veillette87_LOG8371_TP1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}
