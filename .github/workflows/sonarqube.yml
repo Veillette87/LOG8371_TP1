@@ -29,7 +29,7 @@ jobs:
 
     - name: Run SonarQube Analysis
       env:
-        SONAR_TOKEN: ${{ secrets.TP1_token }}
+        SONAR_TOKEN: ${{ secrets.TP1_TOKEN }}
         SONAR_HOST_URL: https://sonarcloud.io
       run: |
         ./gradlew sonarqube -Dsonar.projectKey=mon-projet -Dsonar.organization=mon-organisation -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
