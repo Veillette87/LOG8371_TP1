@@ -20,7 +20,7 @@ jobs:
       run: ./gradlew build
 
     - name: Run unit tests
-      run: ./gradlew test -Dtest.exclude.pattern=**/BootstrapMediumIT.class,**/RunMapperTest.class
+      run: ./gradlew test
 
   sonarqube:
     runs-on: ubuntu-latest
